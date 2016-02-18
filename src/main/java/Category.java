@@ -24,4 +24,12 @@ public class Category {
     return mId;
   }
 
+  public static Category find(int id) {
+    try {
+      return cats.get(id-1);
+    } catch (IndexOutOfBoundsException e) {
+      return null;
+    }
+  }
+
 }
