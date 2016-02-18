@@ -50,4 +50,12 @@ public class CategoryTest {
       Category.clear();
       assertEquals(Category.all().size(), 0);
     }
+
+    @Test
+    public void addTask_addsTaskToCategoryList() {
+      Category testCategory = new Category("Home");
+      Task testTask = new Task("Mow the lawn");
+      testCategory.addTask(testTask);
+      assertTrue(testCategory.getTasks().contains(testTask));
+    }
 }
