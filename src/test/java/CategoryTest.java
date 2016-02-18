@@ -18,4 +18,17 @@ public class CategoryTest {
     assertEquals("Home", myCategory.getLocation());
   }
 
+  @Test
+  public void all_returnsAllInstancesOfCategory_true() {
+    Category firstCategory = new Category("Home");
+    Category secondCategory = new Category("Work");
+    assertTrue(Category.all().contains(firstCategory));
+    assertTrue(Category.all().contains(secondCategory));
+  }
+
+  @Test
+  public void newId_categoryInstantiatesWithAnID_true() {
+    Category myCategory = new Category ("Home");
+    assertEquals(Category.all().size(), myCategory.getId());
+  }
 }
