@@ -38,9 +38,16 @@ public class CategoryTest {
     Category secondCategory = new Category("Work");
     assertEquals(Category.find(secondCategory.getId()), secondCategory);
   }
-  
+
   @Test
-  public void find_returnsNullWhenNoTaskFound_null() {
-    assertTrue(Task.find(999) == null);
+  public void find_returnsNullWhenNoCategoryFound_null() {
+    assertTrue(Category.find(999) == null);
   }
+
+    @Test
+    public void clear_emptiesAllCategoriesFromArrayList() {
+      Category myCategory = new Category("Home");
+      Category.clear();
+      assertEquals(Category.all().size(), 0);
+    }
 }

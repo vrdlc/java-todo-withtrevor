@@ -32,4 +32,7 @@ public class Category {
     }
   }
 
+  public static void clear() {
+    cats.clear();
+  }
 }
